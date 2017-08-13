@@ -21,7 +21,7 @@ class Post extends Schema {
     this.author = data.author;
     this.votes = data.votes || 0;
     this.comments = data.comments || [];
-    this.addComment = this.addComment.bund(this);
+    this.addComment = this.addComment.bind(this);
   }
   addComment(comment) {
     this.comments.push(new ObjectId('Comment', comment));
